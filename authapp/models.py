@@ -3,8 +3,6 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
-
-
 class UserProfile(AbstractUser):
 
     GENDER_MALE = 'm'
