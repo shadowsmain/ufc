@@ -1,29 +1,47 @@
-import logo from './kenzo.gif';
-import './App.css';
+import React from 'react';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import ProjectList from "./components/Project";
 
-function App() {
-  return (
 
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          vladlen
-        </p>
-        <a
-          className="App-link"
-          href="https://vk.com/goticaaa"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          me
-        </a>
-        <div class="header"></div>
-<p id="clock"></p>
+const projectsMock = [
+    {'name': "Израэль Адесанья", 'age': "26", 'rating': "Champion"},
+    {'name': "Нейт Диаз", 'age': "30", 'rating': "10"},
+    {'name': "Ник Диаз", 'age': "35", 'rating': "12",}
+];
 
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+    constructor(props) {
+        super(props);  // parent constructor
+        this.state = {
+            users: [],
+            projects: [],
+            tasks: [],
+            age: [],
+            rating: []
+
+        };
+    }
+
+    componentDidMount() {
+        // call API
+        this.setState({
+            projects: projectsMock
+        })
+    }
+
+    render() {
+        console.log('state', this.state);
+        return (
+            <div>
+                <Header/>
+                Dashboard
+                <ProjectList projects={this.state.projects}/>
+                <Footer/>
+            </div>
+        )
+    }
 }
 
 export default App;
