@@ -25,6 +25,7 @@ const ProjectList = ({projects}) => {
                 <th>Name</th>
                 <th>Age </th>
                 <th>Rating </th>
+
             </tr>
             </thead>
             <tbody>

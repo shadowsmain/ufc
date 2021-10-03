@@ -15,3 +15,6 @@ class UserProfile(AbstractUser):
     date_birth = models.DateField(_('birth date'), null=True)
     gender = models.CharField(_('gender'), max_length=1,
                               choices=GENDER_CHOICES, blank=True)
+
+    def __str__(self):
+        return f'{self.username}'
