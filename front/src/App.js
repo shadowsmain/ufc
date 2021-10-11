@@ -227,33 +227,32 @@ class App extends React.Component {
     render() {
         console.log('state', this.state);
         return (
-            <div>
-                <Header/>
-                 <Router>
-                UFC Fighters
-              <ul>
-                <li>
-                    <Link to={"/users"}>Users</Link>
-                </li>
-                 <li>
-                    <Link to={"/projects"}>Projects</Link>
-                </li>
-                 <li>
-                    <Link to={"/tasks"}>Tasks</Link>
-                </li>
-              </ul>
-                <Route exact path="/users">
-                    <UserList users={this.state.users}/>
-                </Route>
-                <Route exact path="/projects">
-                    <ProjectList projects={this.state.projects}/>
-                </Route>
-                <Route exact path="/tasks">
-                    <TaskList tasks={this.state.tasks}/>
-                </Route>
-                </Router>
-                <Footer/>
-            </div>
+    <div>
+        <Router>
+            UFC Fighters
+        <ul>
+            <li>
+                <Link to={"/users"}>Users</Link>
+            </li>
+            <li>
+                <Link to={"/projects"}>Projects</Link>
+            </li>
+            <li>
+                <Link to={"/tasks"}>Tasks</Link>
+            </li>
+        </ul>
+            <Route exact path="/users">
+            <UserList users={this.state.users}/>
+            </Route>
+            <Route exact path="/projects">
+            <ProjectList projects={this.state.projects}/>
+            </Route>
+            <Route exact path="/tasks">
+            <TaskList tasks={this.state.tasks}/>
+            </Route>
+        </Router>
+        <Footer/>
+    </div>
         )
     }
 }
