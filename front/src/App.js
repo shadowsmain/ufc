@@ -1,5 +1,6 @@
 import React from 'react';
-import {BrowserRouter as Router,Route, Link} from 'react-router-dom'
+import {BrowserRouter as Router,Route, Link} from 'react-router-dom';
+import {Container, Nav, Navbar} from 'react-bootstrap';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ProjectList from "./components/Project";
@@ -228,19 +229,20 @@ class App extends React.Component {
         console.log('state', this.state);
         return (
     <div>
+        UFC Fighters
         <Router>
-            UFC Fighters
-        <ul>
-            <li>
-                <Link to={"/users"}>Users</Link>
-            </li>
-            <li>
-                <Link to={"/projects"}>Projects</Link>
-            </li>
-            <li>
-                <Link to={"/tasks"}>Tasks</Link>
-            </li>
-        </ul>
+            <Header/>
+            <Navbar bg="dark" variant="dark">
+        <Container>
+            <Nav className="me-auto">
+
+                <Nav.Link to={"/users"}>Users</Nav.Link>
+                <Nav.Link to={"/projects"}>Projects</Nav.Link>
+                <Nav.Link to={"/tasks"}>Tasks</Nav.Link>
+
+            </Nav>
+        </Container>
+            </Navbar>
             <Route exact path="/users">
             <UserList users={this.state.users}/>
             </Route>
