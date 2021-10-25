@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router,Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ProjectList from "./components/Project";
@@ -225,13 +225,13 @@ class App extends React.Component {
     }
 
     render() {
-        console.log('state', this.state);
+     //   console.log('state', this.state);
         return (
-    <div>
-        <Router>
-            UFC Fighters
-        <ul>
-            <li>
+            <div>
+            <Router>
+                 <Header/>
+                 <ul>
+                 <li>
                 <Link to={"/users"}>Users</Link>
             </li>
             <li>
@@ -250,9 +250,11 @@ class App extends React.Component {
             <Route exact path="/tasks">
             <TaskList tasks={this.state.tasks}/>
             </Route>
-        </Router>
+
+            </Router>
+
         <Footer/>
-    </div>
+         </div>
         )
     }
 }

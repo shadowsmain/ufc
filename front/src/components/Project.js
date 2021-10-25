@@ -17,22 +17,23 @@ const Project = ({project}) => {
 }
 
 const ProjectList = ({projects}) => {
-    console.log('projects:', projects);
+   // console.log('projects:', projects);
     return (
-        <table className={"project-list"}>
+        <div className="project-list">
+        <table className={"project-list__table"}>
             <thead>
             <tr>
                 <th>Name</th>
                 <th>Age </th>
                 <th>Rating </th>
-
             </tr>
             </thead>
             <tbody>
             {/*{projects.map(Project)}*/}
-            {projects.map((project) => <Project key={project.name} project={project}/>)}
+            {projects.map((project) => <Project key={project.id} project={project}/>)}
             </tbody>
         </table>
+    </div>
     )
 }
 
