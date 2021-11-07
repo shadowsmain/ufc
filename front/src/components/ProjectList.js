@@ -1,16 +1,29 @@
+import {NavLink as Link} from "react-router-dom";
+import React from "react";
+
 const Project = ({project}) => {
     console.log('project:', project);
     return (
         <tr className="project-row">
             <td>
-                {project.name}
+
+                 <Link to={`/projects/detail/${project.id}`} className="nav-link">
+                        {project.name}
+                </Link>
             </td>
 
             <td>
                 {project.age}
             </td>
+
             <td>
                 {project.rating}
+            </td>
+
+            <td>
+                <Link to={`/projects/delete${project.id}`} className="nav-link">
+                        delete
+                </Link>
             </td>
         </tr>
     )
