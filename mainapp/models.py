@@ -25,8 +25,8 @@ class Project(models.Model):
         return self
 
     def delete(self, using=None, keep_parents=False):
-        self.is_active = False
         with transaction.atomic() as _:
+            self.is_active = False
             self.projecttask_set.all().update(is_active=False)
             self.name = f'_{self.name}'
 
